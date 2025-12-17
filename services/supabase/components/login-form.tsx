@@ -38,9 +38,7 @@ export function LoginForm({
       });
       if (error) throw error;
       if (data.session) {
-        router.refresh()
-        // Only present when email confirmation is disabled
-        router.push("/");
+        window.location.href = "/";
       }
     } catch (error: unknown) {
       setError(error instanceof Error ? error.message : "An error occurred");
